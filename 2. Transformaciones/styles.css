@@ -1,0 +1,67 @@
+
+*{
+    margin: 10px 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.container{
+    width: 90%;
+    margin: 30px auto;
+    border: 3px solid gainsboro;
+    display: flex;
+    align-items: center;
+}
+
+.element, .element1,  .element2,  .element3 ,.element4{
+    background-color: steelblue;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    transform-origin: left;
+    transition: transform 1s;
+}
+
+.container:hover .element{
+     transform: translate(100%);  /* Translada un elemento  */
+     /* Se mueve por cordenadas X o Y  ya dependiendo de si es + ó - a al lado su shorthand es translate*/
+    
+}
+
+.container:hover .element1{
+
+     transform: rotate(360deg);  
+    /* Este se mide en grados (0 -360 deg), gradianes(0-400 grad), radianes(0 - 6,2831 rad) , vueltas (0 -1 turn) */
+
+    /* Las rotaciones tienen un punto de partida que por default es 50 50
+        transform-origin: top center;
+    */
+}
+
+.container:hover .element2{
+
+   transform: scale(.5);
+   /* Escala los elementos, solo recibe enteros hasta 5 y numeros negativos,
+   tambien porcentajes, default 1 su shorthand es scale (valorx, valory)*/
+}
+
+.container:hover .element3{
+
+    transform: skewX(30deg) skewY(30deg);
+    /* Permite deformar un elemento, al igual que rotate solo recibe valores angulares
+    Segun la W3C ya no se debe usar el shorthand pues ya no es compatible con algunos navegadores
+    se debe espceifcar el valor para cada eje
+    */
+ }
+
+ .container:hover .element4{
+
+    transform: rotate(30deg) translate(400px);
+    /* Cada transformacion se basa en la anterior, asi que hay que tener cuidado con combinarlas */
+ }
+
+ /* Desde el performancede la consola del navegador se pueden ver las animaciones
+ lo normal es que este a 60 fps
+
+ La propiedad will-change soluciona problemas de rendimiento, usar concientemente
+ */

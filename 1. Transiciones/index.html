@@ -1,0 +1,67 @@
+ <!-- En CSS las transiciones es una de las formas de animar un elemento 
+ esto se logra de un estado A a un estado B pero no de manera instantanea 
+ creando asi una animacion por ejemlo pasar de un background verde a uno rojo pero no de inmediato
+
+- Las animaciones consumen recursos del sistema
+- Procurar usar transform y opacity porque el navegador tiene un proceso de renderizado con estos
+
+Proceso de renderización
+
+1. Javascript / CSS
+2. Layout - Da la geometria a los elementos con CSS es el mas costoso
+3. Paint - Es el proceso de rellenar los íxeles, toda la parte visual del elemento
+4. Composite- Da el orden adecuado a las capas del navegador como propiedades tenemos el transform
+
+-->
+
+<!DOCTYPE html>
+<html lang = "es">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-witdh, initial-scale=1.0">   
+      <title>Transiciones</title>
+      <link rel="stylesheet" href="estilos.css">
+   </head>
+   
+   <body>
+      <h1><center>Transiciones</center></h1>
+    <div class="container">
+      <div class="element1">
+
+      </div>
+      <h3 class="title">linear</h3>
+  </div>
+
+  <div class="container">
+   <div class="element2">
+
+   </div>
+   <h3 class="title">ease-in</h3>
+</div>
+
+<div class="container">
+   <div class="element3">
+
+   </div>
+
+   <h3 class="title">ease-out</h3>
+</div>
+
+<div class="container">
+   <div class="element4">
+
+   </div>
+   <h3 class="title">ease-in-out</h3>
+</div>
+
+<div class="container">
+   <div class="element5">
+
+   </div>
+   <h3 class="title">steps</h3>
+</div>
+  
+   </body>
+</html>
+

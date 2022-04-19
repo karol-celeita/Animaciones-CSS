@@ -1,0 +1,89 @@
+*{
+    margin: 10px 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container{
+    width: 90%;
+    border: 3px solid gainsboro;
+    margin: 20px auto;
+    display: flex;
+    justify-content: left;
+}
+
+/* No todas las propiedades son animables, en el link están las que si lo permiten
+ https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties
+*/
+
+
+
+.element1, .element2, .element3, .element4, .element5{
+    width: 100px;
+    height: 100px;
+    background-color: tomato;
+    border-radius: 50%;
+    clip-path: circle(100%);
+    transition-duration: 3s;
+    transform: translate(-10px);
+ 
+}
+
+body:hover .element1{
+    transition-timing-function: linear;
+    transform: translate(800px);
+
+}
+
+body:hover .element2{
+    transition-timing-function: ease-in;
+    transform: translate(800px);
+
+}
+
+body:hover .element3{
+    transition-timing-function: ease-out;
+    transform: translate(800px);
+}
+
+body:hover .element4{
+    transition-timing-function: ease-in-out;
+    transform: translate(800px);
+}
+
+body:hover .element5{
+    transition-timing-function: steps(5);
+    transform: translate(800px);
+}
+
+.title{
+    text-align: center;
+    display: flex;
+}
+/* Transition es un shorthand que reune 
+    transition-property: Explica las propiedades que tendran la transicion,
+                        el valor all pondra la animacion a todas las propiedas es malo por recursos, tampoco es bueno usarlo en
+                        backgroung porque este es otro shorthand
+                        transition-property: clip-path, transform
+    transition-duration: Define la duracion de la transision, puede ser un solo valor o varios, ml o s
+                         Valor default 0 
+    transition-timing-function: Define la curva de aceleracion desde el inicio hasta el fin
+                        Valores: ease(default):Aumenta la velocidad hacia la mitad del tiemp y la dismuye al final
+                                 ease-in: Comienza lento pero luego acelera
+                                 ease-out: Comienza rapido y desacelera
+                                 ease-in-out: Comienza lento, acelera y disminuye de nuevo
+                                 linear: Velocidad uniforme
+                                 steps: Pasa la transicion en pasos
+
+                                Estos tiempos los define la curva de bezier
+                                https://cubic-bezier.com/#.17,.67,.83,.67
+                                Con esto tambien puedo personalizar mi curva de aceleracion
+                                
+                                A mas valores se asignara a los properties respectivos
+    transition_delay :  Define el tiempo de espera para que una transicion se ejecute, default 0                         
+                        Si pongo valores negativos se restaran al tiempo de duracion
+                                */
+.element:hover{
+    clip-path: circle(30%);
+}
